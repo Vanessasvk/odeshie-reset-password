@@ -60,7 +60,7 @@ export default function Dashboard() {
               </div>
               <h3 className="text-lg font-bold font-['Public_Sans'] text-slate-900 mb-2">Your Products</h3>
               <p className="text-slate-600 text-sm font-['Public_Sans'] mb-4">Showcase and manage your luxury collections.</p>
-              <button className="text-[#743b1e] font-semibold font-['Public_Sans'] hover:underline">View Products →</button>
+              <button onClick={() => setLocation('/products')} className="text-[#743b1e] font-semibold font-['Public_Sans'] hover:underline">View Products →</button>
             </div>
 
             {/* Card 3: Orders */}
