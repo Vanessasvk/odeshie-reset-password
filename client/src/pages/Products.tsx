@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import { useLocation } from 'wouter';
+import { useCart } from '@/contexts/CartContext';
 
 interface Product {
   id: string;
@@ -148,6 +149,7 @@ const PRICE_RANGES = [
 
 export default function Products() {
   const [, setLocation] = useLocation();
+  const { getTotalItems } = useCart();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedPriceRange, setSelectedPriceRange] = useState(0);
@@ -202,12 +204,27 @@ export default function Products() {
           >
             ƆDESHIE
           </button>
-          <button
-            onClick={() => setLocation('/dashboard')}
-            className="px-6 py-2 bg-[#743b1e] text-white rounded-lg font-['Public_Sans'] font-semibold hover:bg-[#8b4623] transition-colors"
-          >
-            Dashboard
-          </button>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setLocation('/cart')}
+              className="relative p-2 text-slate-600 hover:text-[#743b1e] transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+              {getTotalItems() > 0 && (
+                <span className="absolute top-0 right-0 w-5 h-5 bg-[#743b1e] text-white text-xs rounded-full flex items-center justify-center font-['Public_Sans'] font-bold">
+                  {getTotalItems()}
+                </span>
+              )}
+            </button>
+            <button
+              onClick={() => setLocation('/dashboard')}
+              className="px-6 py-2 bg-[#743b1e] text-white rounded-lg font-['Public_Sans'] font-semibold hover:bg-[#8b4623] transition-colors"
+            >
+              Dashboard
+            </button>
+          </div>
         </div>
       </header>
 

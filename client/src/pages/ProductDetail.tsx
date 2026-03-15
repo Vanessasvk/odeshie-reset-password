@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useLocation, useRoute } from 'wouter';
+import { useCart } from '@/contexts/CartContext';
 
 interface Review {
   id: string;
@@ -133,8 +134,17 @@ export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
   const [cartAdded, setCartAdded] = useState(false);
+  const { addToCart } = useCart();
 
   const handleAddToCart = () => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      quantity: quantity,
+      image: product.image,
+      category: product.category,
+    });
     setCartAdded(true);
     setTimeout(() => setCartAdded(false), 2000);
   };
@@ -156,12 +166,20 @@ export default function ProductDetail() {
           >
             ƆDESHIE
           </button>
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
             <button
               onClick={() => setLocation('/products')}
               className="text-slate-600 font-['Public_Sans'] hover:text-slate-900 transition-colors"
             >
               ← Back to Products
+            </button>
+            <button
+              onClick={() => setLocation('/cart')}
+              className="relative p-2 text-slate-600 hover:text-[#743b1e] transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
             </button>
             <button
               onClick={() => setLocation('/dashboard')}
