@@ -9,6 +9,7 @@ import ResetPassword from "./pages/ResetPassword";
 import Success from "./pages/Success";
 import Dashboard from "./pages/Dashboard";
 import Products from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail";
 
 
 function Router() {
@@ -20,7 +21,7 @@ function Router() {
       <Route path={"/success"} component={Success} />
       <Route path={"/dashboard"} component={Dashboard} />
       <Route path={"/products"} component={Products} />
-      <Route path={"/product/:id"} component={Products} />
+      <Route path={"/product/:id"} component={ProductDetail} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

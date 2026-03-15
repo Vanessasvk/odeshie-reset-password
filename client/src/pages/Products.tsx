@@ -338,6 +338,8 @@ export default function Products() {
                         key={product.id}
                         className="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-lg transition-shadow cursor-pointer"
                         onClick={() => setLocation(`/product/${product.id}`)}
+                        role="button"
+                        tabIndex={0}
                       >
                         {/* Product Image */}
                         <div className="relative h-64 bg-slate-200 overflow-hidden">
