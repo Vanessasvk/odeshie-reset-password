@@ -14,6 +14,10 @@ import ProductDetail from "./pages/ProductDetail";
 import Checkout from "./pages/Checkout";
 import OrderConfirmation from "./pages/OrderConfirmation";
 import Cart from "./pages/Cart";
+import Settings from "./pages/Settings";
+import Orders from "./pages/Orders";
+import Analytics from "./pages/Analytics";
+import Support from "./pages/Support";
 
 
 function Router() {
@@ -29,6 +33,10 @@ function Router() {
       <Route path={"/checkout"} component={Checkout} />
       <Route path={"/order-confirmation"} component={OrderConfirmation} />
       <Route path={"/cart"} component={Cart} />
+      <Route path={"/settings"} component={Settings} />
+      <Route path={"/orders"} component={Orders} />
+      <Route path={"/analytics"} component={Analytics} />
+      <Route path={"/support"} component={Support} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

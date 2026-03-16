@@ -46,7 +46,7 @@ export default function Dashboard() {
               </div>
               <h3 className="text-lg font-bold font-['Public_Sans'] text-slate-900 mb-2">Account Settings</h3>
               <p className="text-slate-600 text-sm font-['Public_Sans'] mb-4">Manage your profile, security, and preferences.</p>
-              <button className="text-[#743b1e] font-semibold font-['Public_Sans'] hover:underline">View Settings →</button>
+              <button onClick={() => setLocation('/settings')} className="text-[#743b1e] font-semibold font-['Public_Sans'] hover:underline">View Settings →</button>
             </div>
 
             {/* Card 2: Products */}
@@ -74,7 +74,7 @@ export default function Dashboard() {
               </div>
               <h3 className="text-lg font-bold font-['Public_Sans'] text-slate-900 mb-2">Orders</h3>
               <p className="text-slate-600 text-sm font-['Public_Sans'] mb-4">Track and manage customer orders.</p>
-              <button className="text-[#743b1e] font-semibold font-['Public_Sans'] hover:underline">View Orders →</button>
+              <button onClick={() => setLocation('/orders')} className="text-[#743b1e] font-semibold font-['Public_Sans'] hover:underline">View Orders →</button>
             </div>
 
             {/* Card 4: Analytics */}
@@ -88,7 +88,7 @@ export default function Dashboard() {
               </div>
               <h3 className="text-lg font-bold font-['Public_Sans'] text-slate-900 mb-2">Analytics</h3>
               <p className="text-slate-600 text-sm font-['Public_Sans'] mb-4">View sales and customer insights.</p>
-              <button className="text-[#743b1e] font-semibold font-['Public_Sans'] hover:underline">View Analytics →</button>
+              <button onClick={() => setLocation('/analytics')} className="text-[#743b1e] font-semibold font-['Public_Sans'] hover:underline">View Analytics →</button>
             </div>
 
             {/* Card 5: Support */}
@@ -102,7 +102,7 @@ export default function Dashboard() {
               </div>
               <h3 className="text-lg font-bold font-['Public_Sans'] text-slate-900 mb-2">Support</h3>
               <p className="text-slate-600 text-sm font-['Public_Sans'] mb-4">Get help with your account and products.</p>
-              <button className="text-[#743b1e] font-semibold font-['Public_Sans'] hover:underline">Contact Support →</button>
+              <button onClick={() => setLocation('/support')} className="text-[#743b1e] font-semibold font-['Public_Sans'] hover:underline">Contact Support →</button>
             </div>
 
             {/* Card 6: Change Password */}

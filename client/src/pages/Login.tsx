@@ -33,7 +33,7 @@ export default function Login() {
             </div>
             <div className="w-full max-w-[448px] flex flex-col justify-start items-start gap-6">
               <div className="self-stretch flex flex-col justify-start items-start">
-                <div className="self-stretch justify-center text-white text-5xl font-extrabold font-['Public_Sans']">Welcome back to<br/>your seller<br/>dashboard.</div>
+                <div className="self-stretch justify-center text-white text-5xl font-extrabold font-['Public_Sans']">Welcome back to<br/>your account.</div>
               </div>
               <div className="self-stretch flex flex-col justify-start items-start">
                 <div className="self-stretch justify-center text-slate-200 text-lg font-normal font-['Public_Sans']">Sign in to manage your African<br/>luxury brand and connect with<br/>global customers.</div>
@@ -50,7 +50,7 @@ export default function Login() {
                 <div className="self-stretch justify-center text-slate-900 text-3xl font-black font-['Public_Sans']">Sign In</div>
               </div>
               <div className="self-stretch flex flex-col justify-start items-start">
-                <div className="self-stretch justify-center text-slate-600 text-base font-normal font-['Public_Sans']">Enter your credentials to access<br/>your seller account.</div>
+                <div className="self-stretch justify-center text-slate-600 text-base font-normal font-['Public_Sans']">Enter your credentials to access<br/>your account.</div>
               </div>
             </div>
 
