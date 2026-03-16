@@ -42,12 +42,16 @@ export default function Checkout() {
     city: '',
     state: '',
     zipCode: '',
-    country: 'United States',
+    country: 'Afghanistan',
     cardName: '',
     cardNumber: '',
     cardExpiry: '',
     cardCVC: '',
     shippingMethod: 'standard',
+    paymentMethod: 'card',
+    bankName: '',
+    accountNumber: '',
+    momoNumber: '',
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -83,12 +87,20 @@ export default function Checkout() {
 
   const validatePayment = () => {
     const newErrors: Record<string, string> = {};
-    if (!formData.cardName) newErrors.cardName = 'Cardholder name is required';
-    if (!formData.cardNumber || formData.cardNumber.length < 13)
-      newErrors.cardNumber = 'Valid card number is required';
-    if (!formData.cardExpiry) newErrors.cardExpiry = 'Expiry date is required';
-    if (!formData.cardCVC || formData.cardCVC.length < 3)
-      newErrors.cardCVC = 'Valid CVC is required';
+    
+    if (formData.paymentMethod === 'card') {
+      if (!formData.cardName) newErrors.cardName = 'Cardholder name is required';
+      if (!formData.cardNumber || formData.cardNumber.length < 13)
+        newErrors.cardNumber = 'Valid card number is required';
+      if (!formData.cardExpiry) newErrors.cardExpiry = 'Expiry date is required';
+      if (!formData.cardCVC || formData.cardCVC.length < 3)
+        newErrors.cardCVC = 'Valid CVC is required';
+    } else if (formData.paymentMethod === 'bank') {
+      if (!formData.bankName) newErrors.bankName = 'Bank name is required';
+      if (!formData.accountNumber) newErrors.accountNumber = 'Account number is required';
+    } else if (formData.paymentMethod === 'momo') {
+      if (!formData.momoNumber) newErrors.momoNumber = 'Mobile Money number is required';
+    }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -357,10 +369,199 @@ export default function Checkout() {
                           onChange={handleInputChange}
                           className="w-full px-4 py-2 border border-slate-200 rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e]"
                         >
-                          <option>United States</option>
-                          <option>Canada</option>
-                          <option>United Kingdom</option>
+                          <option>Afghanistan</option>
+                          <option>Albania</option>
+                          <option>Algeria</option>
+                          <option>Andorra</option>
+                          <option>Angola</option>
+                          <option>Argentina</option>
+                          <option>Armenia</option>
                           <option>Australia</option>
+                          <option>Austria</option>
+                          <option>Azerbaijan</option>
+                          <option>Bahamas</option>
+                          <option>Bahrain</option>
+                          <option>Bangladesh</option>
+                          <option>Barbados</option>
+                          <option>Belarus</option>
+                          <option>Belgium</option>
+                          <option>Belize</option>
+                          <option>Benin</option>
+                          <option>Bhutan</option>
+                          <option>Bolivia</option>
+                          <option>Bosnia and Herzegovina</option>
+                          <option>Botswana</option>
+                          <option>Brazil</option>
+                          <option>Brunei</option>
+                          <option>Bulgaria</option>
+                          <option>Burkina Faso</option>
+                          <option>Burundi</option>
+                          <option>Cambodia</option>
+                          <option>Cameroon</option>
+                          <option>Canada</option>
+                          <option>Cape Verde</option>
+                          <option>Central African Republic</option>
+                          <option>Chad</option>
+                          <option>Chile</option>
+                          <option>China</option>
+                          <option>Colombia</option>
+                          <option>Comoros</option>
+                          <option>Congo</option>
+                          <option>Costa Rica</option>
+                          <option>Croatia</option>
+                          <option>Cuba</option>
+                          <option>Cyprus</option>
+                          <option>Czech Republic</option>
+                          <option>Denmark</option>
+                          <option>Djibouti</option>
+                          <option>Dominica</option>
+                          <option>Dominican Republic</option>
+                          <option>Ecuador</option>
+                          <option>Egypt</option>
+                          <option>El Salvador</option>
+                          <option>Equatorial Guinea</option>
+                          <option>Eritrea</option>
+                          <option>Estonia</option>
+                          <option>Ethiopia</option>
+                          <option>Fiji</option>
+                          <option>Finland</option>
+                          <option>France</option>
+                          <option>Gabon</option>
+                          <option>Gambia</option>
+                          <option>Georgia</option>
+                          <option>Germany</option>
+                          <option>Ghana</option>
+                          <option>Greece</option>
+                          <option>Grenada</option>
+                          <option>Guatemala</option>
+                          <option>Guinea</option>
+                          <option>Guinea-Bissau</option>
+                          <option>Guyana</option>
+                          <option>Haiti</option>
+                          <option>Honduras</option>
+                          <option>Hungary</option>
+                          <option>Iceland</option>
+                          <option>India</option>
+                          <option>Indonesia</option>
+                          <option>Iran</option>
+                          <option>Iraq</option>
+                          <option>Ireland</option>
+                          <option>Israel</option>
+                          <option>Italy</option>
+                          <option>Jamaica</option>
+                          <option>Japan</option>
+                          <option>Jordan</option>
+                          <option>Kazakhstan</option>
+                          <option>Kenya</option>
+                          <option>Kiribati</option>
+                          <option>Kosovo</option>
+                          <option>Kuwait</option>
+                          <option>Kyrgyzstan</option>
+                          <option>Laos</option>
+                          <option>Latvia</option>
+                          <option>Lebanon</option>
+                          <option>Lesotho</option>
+                          <option>Liberia</option>
+                          <option>Libya</option>
+                          <option>Liechtenstein</option>
+                          <option>Lithuania</option>
+                          <option>Luxembourg</option>
+                          <option>Madagascar</option>
+                          <option>Malawi</option>
+                          <option>Malaysia</option>
+                          <option>Maldives</option>
+                          <option>Mali</option>
+                          <option>Malta</option>
+                          <option>Marshall Islands</option>
+                          <option>Mauritania</option>
+                          <option>Mauritius</option>
+                          <option>Mexico</option>
+                          <option>Micronesia</option>
+                          <option>Moldova</option>
+                          <option>Monaco</option>
+                          <option>Mongolia</option>
+                          <option>Montenegro</option>
+                          <option>Morocco</option>
+                          <option>Mozambique</option>
+                          <option>Myanmar</option>
+                          <option>Namibia</option>
+                          <option>Nauru</option>
+                          <option>Nepal</option>
+                          <option>Netherlands</option>
+                          <option>New Zealand</option>
+                          <option>Nicaragua</option>
+                          <option>Niger</option>
+                          <option>Nigeria</option>
+                          <option>North Korea</option>
+                          <option>North Macedonia</option>
+                          <option>Norway</option>
+                          <option>Oman</option>
+                          <option>Pakistan</option>
+                          <option>Palau</option>
+                          <option>Palestine</option>
+                          <option>Panama</option>
+                          <option>Papua New Guinea</option>
+                          <option>Paraguay</option>
+                          <option>Peru</option>
+                          <option>Philippines</option>
+                          <option>Poland</option>
+                          <option>Portugal</option>
+                          <option>Qatar</option>
+                          <option>Romania</option>
+                          <option>Russia</option>
+                          <option>Rwanda</option>
+                          <option>Saint Kitts and Nevis</option>
+                          <option>Saint Lucia</option>
+                          <option>Saint Vincent and the Grenadines</option>
+                          <option>Samoa</option>
+                          <option>San Marino</option>
+                          <option>Sao Tome and Principe</option>
+                          <option>Saudi Arabia</option>
+                          <option>Senegal</option>
+                          <option>Serbia</option>
+                          <option>Seychelles</option>
+                          <option>Sierra Leone</option>
+                          <option>Singapore</option>
+                          <option>Slovakia</option>
+                          <option>Slovenia</option>
+                          <option>Solomon Islands</option>
+                          <option>Somalia</option>
+                          <option>South Africa</option>
+                          <option>South Korea</option>
+                          <option>South Sudan</option>
+                          <option>Spain</option>
+                          <option>Sri Lanka</option>
+                          <option>Sudan</option>
+                          <option>Suriname</option>
+                          <option>Sweden</option>
+                          <option>Switzerland</option>
+                          <option>Syria</option>
+                          <option>Taiwan</option>
+                          <option>Tajikistan</option>
+                          <option>Tanzania</option>
+                          <option>Thailand</option>
+                          <option>Timor-Leste</option>
+                          <option>Togo</option>
+                          <option>Tonga</option>
+                          <option>Trinidad and Tobago</option>
+                          <option>Tunisia</option>
+                          <option>Turkey</option>
+                          <option>Turkmenistan</option>
+                          <option>Tuvalu</option>
+                          <option>Uganda</option>
+                          <option>Ukraine</option>
+                          <option>United Arab Emirates</option>
+                          <option>United Kingdom</option>
+                          <option>United States</option>
+                          <option>Uruguay</option>
+                          <option>Uzbekistan</option>
+                          <option>Vanuatu</option>
+                          <option>Vatican City</option>
+                          <option>Venezuela</option>
+                          <option>Vietnam</option>
+                          <option>Yemen</option>
+                          <option>Zambia</option>
+                          <option>Zimbabwe</option>
                         </select>
                       </div>
                     </div>
@@ -415,90 +616,210 @@ export default function Checkout() {
                       Payment Information
                     </h2>
 
-                    <div className="mb-4">
-                      <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-900 mb-2">
-                        Cardholder Name
+                    <div className="mb-6">
+                      <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-900 mb-4">
+                        Payment Method
                       </label>
-                      <input
-                        type="text"
-                        name="cardName"
-                        value={formData.cardName}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
-                          errors.cardName ? 'border-red-500' : 'border-slate-200'
-                        }`}
-                        placeholder="John Doe"
-                      />
-                      {errors.cardName && (
-                        <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
-                          {errors.cardName}
-                        </p>
-                      )}
+                      <div className="space-y-3">
+                        <label className="flex items-center p-4 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50">
+                          <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="card"
+                            checked={formData.paymentMethod === 'card'}
+                            onChange={handleInputChange}
+                            className="w-4 h-4"
+                          />
+                          <span className="ml-3 font-['Public_Sans']">
+                            💳 Credit/Debit Card
+                          </span>
+                        </label>
+                        <label className="flex items-center p-4 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50">
+                          <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="bank"
+                            checked={formData.paymentMethod === 'bank'}
+                            onChange={handleInputChange}
+                            className="w-4 h-4"
+                          />
+                          <span className="ml-3 font-['Public_Sans']">
+                            🏦 Bank Transfer
+                          </span>
+                        </label>
+                        <label className="flex items-center p-4 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50">
+                          <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="momo"
+                            checked={formData.paymentMethod === 'momo'}
+                            onChange={handleInputChange}
+                            className="w-4 h-4"
+                          />
+                          <span className="ml-3 font-['Public_Sans']">
+                            📱 Mobile Money (Momo)
+                          </span>
+                        </label>
+                      </div>
                     </div>
 
-                    <div className="mb-4">
-                      <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-900 mb-2">
-                        Card Number
-                      </label>
-                      <input
-                        type="text"
-                        name="cardNumber"
-                        value={formData.cardNumber}
-                        onChange={handleInputChange}
-                        placeholder="1234 5678 9012 3456"
-                        className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
-                          errors.cardNumber ? 'border-red-500' : 'border-slate-200'
-                        }`}
-                      />
-                      {errors.cardNumber && (
-                        <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
-                          {errors.cardNumber}
-                        </p>
-                      )}
-                    </div>
+                    {formData.paymentMethod === 'card' && (
+                      <>
+                        <div className="mb-4">
+                          <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-900 mb-2">
+                            Cardholder Name
+                          </label>
+                          <input
+                            type="text"
+                            name="cardName"
+                            value={formData.cardName}
+                            onChange={handleInputChange}
+                            className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                              errors.cardName ? 'border-red-500' : 'border-slate-200'
+                            }`}
+                            placeholder="John Doe"
+                          />
+                          {errors.cardName && (
+                            <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
+                              {errors.cardName}
+                            </p>
+                          )}
+                        </div>
 
-                    <div className="grid grid-cols-2 gap-4 mb-6">
-                      <div>
+                        <div className="mb-4">
+                          <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-900 mb-2">
+                            Card Number
+                          </label>
+                          <input
+                            type="text"
+                            name="cardNumber"
+                            value={formData.cardNumber}
+                            onChange={handleInputChange}
+                            placeholder="1234 5678 9012 3456"
+                            className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                              errors.cardNumber ? 'border-red-500' : 'border-slate-200'
+                            }`}
+                          />
+                          {errors.cardNumber && (
+                            <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
+                              {errors.cardNumber}
+                            </p>
+                          )}
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-4 mb-6">
+                          <div>
+                            <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-900 mb-2">
+                              Expiry Date
+                            </label>
+                            <input
+                              type="text"
+                              name="cardExpiry"
+                              value={formData.cardExpiry}
+                              onChange={handleInputChange}
+                              placeholder="MM/YY"
+                              className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                                errors.cardExpiry ? 'border-red-500' : 'border-slate-200'
+                              }`}
+                            />
+                            {errors.cardExpiry && (
+                              <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
+                                {errors.cardExpiry}
+                              </p>
+                            )}
+                          </div>
+                          <div>
+                            <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-900 mb-2">
+                              CVC
+                            </label>
+                            <input
+                              type="text"
+                              name="cardCVC"
+                              value={formData.cardCVC}
+                              onChange={handleInputChange}
+                              placeholder="123"
+                              className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                                errors.cardCVC ? 'border-red-500' : 'border-slate-200'
+                              }`}
+                            />
+                            {errors.cardCVC && (
+                              <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
+                                {errors.cardCVC}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      </>
+                    )}
+
+                    {formData.paymentMethod === 'bank' && (
+                      <>
+                        <div className="mb-4">
+                          <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-900 mb-2">
+                            Bank Name
+                          </label>
+                          <input
+                            type="text"
+                            name="bankName"
+                            value={formData.bankName}
+                            onChange={handleInputChange}
+                            className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                              errors.bankName ? 'border-red-500' : 'border-slate-200'
+                            }`}
+                            placeholder="e.g., Ghana Commercial Bank"
+                          />
+                          {errors.bankName && (
+                            <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
+                              {errors.bankName}
+                            </p>
+                          )}
+                        </div>
+
+                        <div className="mb-6">
+                          <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-900 mb-2">
+                            Account Number
+                          </label>
+                          <input
+                            type="text"
+                            name="accountNumber"
+                            value={formData.accountNumber}
+                            onChange={handleInputChange}
+                            className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                              errors.accountNumber ? 'border-red-500' : 'border-slate-200'
+                            }`}
+                            placeholder="Your account number"
+                          />
+                          {errors.accountNumber && (
+                            <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
+                              {errors.accountNumber}
+                            </p>
+                          )}
+                        </div>
+                      </>
+                    )}
+
+                    {formData.paymentMethod === 'momo' && (
+                      <div className="mb-6">
                         <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-900 mb-2">
-                          Expiry Date
+                          Mobile Money Number
                         </label>
                         <input
-                          type="text"
-                          name="cardExpiry"
-                          value={formData.cardExpiry}
+                          type="tel"
+                          name="momoNumber"
+                          value={formData.momoNumber}
                           onChange={handleInputChange}
-                          placeholder="MM/YY"
                           className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
-                            errors.cardExpiry ? 'border-red-500' : 'border-slate-200'
+                            errors.momoNumber ? 'border-red-500' : 'border-slate-200'
                           }`}
+                          placeholder="e.g., +233 24 123 4567"
                         />
-                        {errors.cardExpiry && (
+                        {errors.momoNumber && (
                           <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
-                            {errors.cardExpiry}
+                            {errors.momoNumber}
                           </p>
                         )}
                       </div>
-                      <div>
-                        <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-900 mb-2">
-                          CVC
-                        </label>
-                        <input
-                          type="text"
-                          name="cardCVC"
-                          value={formData.cardCVC}
-                          onChange={handleInputChange}
-                          placeholder="123"
-                          className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
-                            errors.cardCVC ? 'border-red-500' : 'border-slate-200'
-                          }`}
-                        />
-                        {errors.cardCVC && (
-                          <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
-                            {errors.cardCVC}
-                          </p>
-                        )}
-                      </div>
-                    </div>
+                    )}
 
                     <div className="flex gap-4">
                       <button
