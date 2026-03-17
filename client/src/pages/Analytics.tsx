@@ -116,11 +116,11 @@ export default function Analytics() {
             <h2 className="text-lg font-bold font-['Public_Sans'] text-slate-900 mb-6">Recent Transactions</h2>
             <div className="space-y-4">
               {[
-                { date: 'March 15, 2026', product: 'Kente Cloth Luxury Scarf', amount: '$450', status: 'Completed' },
-                { date: 'March 14, 2026', product: 'Adire Indigo Wrap', amount: '$380', status: 'Completed' },
-                { date: 'March 13, 2026', product: 'Bogolan Throw', amount: '$320', status: 'Pending' },
-              ].map((transaction, idx) => (
-                <div key={idx} className="flex justify-between items-center py-3 border-b border-slate-200 last:border-b-0">
+                { id: 'txn-001', date: 'March 15, 2026', product: 'Kente Cloth Luxury Scarf', amount: '$450', status: 'Completed' },
+                { id: 'txn-002', date: 'March 14, 2026', product: 'Adire Indigo Wrap', amount: '$380', status: 'Completed' },
+                { id: 'txn-003', date: 'March 13, 2026', product: 'Bogolan Throw', amount: '$320', status: 'Pending' },
+              ].map((transaction) => (
+                <div key={transaction.id} className="flex justify-between items-center py-3 border-b border-slate-200 last:border-b-0">
                   <div>
                     <div className="font-['Public_Sans'] font-semibold text-slate-900">{transaction.product}</div>
                     <div className="font-['Public_Sans'] text-xs text-slate-600">{transaction.date}</div>
