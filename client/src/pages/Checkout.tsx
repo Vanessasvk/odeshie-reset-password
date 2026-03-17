@@ -677,7 +677,7 @@ export default function Checkout() {
                             className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
                               errors.cardName ? 'border-red-500' : 'border-slate-200'
                             }`}
-                            placeholder="John Doe"
+                            placeholder="Richlove Aku"
                           />
                           {errors.cardName && (
                             <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">

@@ -38,7 +38,7 @@ export default function Settings() {
                   <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-700 mb-2">Full Name</label>
                   <input
                     type="text"
-                    defaultValue="John Doe"
+                    defaultValue="Richlove Aku"
                     className="w-full px-4 py-2 border border-slate-200 rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e]"
                   />
                 </div>

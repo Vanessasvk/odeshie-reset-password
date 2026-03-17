@@ -18,12 +18,13 @@ import Settings from "./pages/Settings";
 import Orders from "./pages/Orders";
 import Analytics from "./pages/Analytics";
 import Support from "./pages/Support";
+import Landing from "./pages/Landing";
 
 
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Login} />
+      <Route path={"/"} component={Landing} />
       <Route path={"/login"} component={Login} />
       <Route path={"/reset-password"} component={ResetPassword} />
       <Route path={"/success"} component={Success} />

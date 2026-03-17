@@ -211,7 +211,7 @@ export default function OrderConfirmation() {
               Shipping Address
             </h3>
             <p className="text-slate-600 font-['Public_Sans'] leading-relaxed">
-              John Doe
+              Richlove Aku
               <br />
               123 Main Street
               <br />
