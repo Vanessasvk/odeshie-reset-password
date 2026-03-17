@@ -1,15 +1,48 @@
-'use client';
-
+import React, { useState } from 'react';
 import { useLocation } from 'wouter';
 import { useCart } from '@/contexts/CartContext';
+
+const PROMO_CODES: { [key: string]: number } = {
+  'SAVE10': 0.10,
+  'LUXURY20': 0.20,
+  'WELCOME15': 0.15,
+  'ODESHIE25': 0.25,
+};
 
 export default function Cart() {
   const [, setLocation] = useLocation();
   const { items, removeFromCart, updateQuantity, getTotalPrice } = useCart();
+  const [promoCode, setPromoCode] = useState('');
+  const [appliedCode, setAppliedCode] = useState<string | null>(null);
+  const [promoError, setPromoError] = useState('');
 
   const subtotal = getTotalPrice();
-  const tax = subtotal * 0.08;
-  const total = subtotal + tax;
+  const discount = appliedCode ? subtotal * PROMO_CODES[appliedCode] : 0;
+  const subtotalAfterDiscount = subtotal - discount;
+  const tax = subtotalAfterDiscount * 0.08;
+  const total = subtotalAfterDiscount + tax;
+
+  const applyPromoCode = () => {
+    const code = promoCode.toUpperCase();
+    if (!code) {
+      setPromoError('Please enter a code');
+      return;
+    }
+    if (PROMO_CODES[code]) {
+      setAppliedCode(code);
+      setPromoError('');
+      setPromoCode('');
+    } else {
+      setPromoError('Invalid promo code');
+      setAppliedCode(null);
+    }
+  };
+
+  const removePromoCode = () => {
+    setAppliedCode(null);
+    setPromoCode('');
+    setPromoError('');
+  };
 
   if (items.length === 0) {
     return (
@@ -167,11 +200,54 @@ export default function Cart() {
                   Order Summary
                 </h3>
 
+                {/* Promo Code Section */}
+                <div className="mb-6 pb-6 border-b border-slate-200">
+                  <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-900 mb-2">
+                    Promo Code
+                  </label>
+                  <div className="flex gap-2 mb-2">
+                    <input
+                      type="text"
+                      value={promoCode}
+                      onChange={(e) => setPromoCode(e.target.value)}
+                      placeholder="Enter code"
+                      className="flex-1 px-3 py-2 border border-slate-200 rounded-lg font-['Public_Sans'] text-sm focus:outline-none focus:ring-2 focus:ring-[#743b1e]"
+                    />
+                    <button
+                      onClick={applyPromoCode}
+                      className="px-4 py-2 bg-slate-100 text-slate-900 rounded-lg font-['Public_Sans'] font-semibold hover:bg-slate-200 transition-colors text-sm"
+                    >
+                      Apply
+                    </button>
+                  </div>
+                  {promoError && <p className="text-xs text-red-600 font-['Public_Sans'] mb-2">{promoError}</p>}
+                  {appliedCode && (
+                    <div className="flex items-center justify-between bg-green-50 border border-green-200 rounded-lg p-2 mb-4">
+                      <span className="text-sm font-semibold font-['Public_Sans'] text-green-700">
+                        {appliedCode} applied ({(PROMO_CODES[appliedCode] * 100).toFixed(0)}% off)
+                      </span>
+                      <button
+                        onClick={removePromoCode}
+                        className="text-green-600 hover:text-green-700 font-['Public_Sans'] text-xs font-semibold"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  )}
+                  <p className="text-xs text-slate-500 font-['Public_Sans']">Try: SAVE10, WELCOME15, LUXURY20, ODESHIE25</p>
+                </div>
+
                 <div className="space-y-3 mb-6 pb-6 border-b border-slate-200">
                   <div className="flex justify-between text-slate-600 font-['Public_Sans']">
                     <span>Subtotal</span>
                     <span>${subtotal.toFixed(2)}</span>
                   </div>
+                  {discount > 0 && (
+                    <div className="flex justify-between text-green-600 font-['Public_Sans'] font-semibold">
+                      <span>Discount ({(PROMO_CODES[appliedCode!] * 100).toFixed(0)}%)</span>
+                      <span>-${discount.toFixed(2)}</span>
+                    </div>
+                  )}
                   <div className="flex justify-between text-slate-600 font-['Public_Sans']">
                     <span>Tax (8%)</span>
                     <span>${tax.toFixed(2)}</span>
