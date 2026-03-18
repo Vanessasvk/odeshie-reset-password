@@ -202,7 +202,7 @@ export default function Checkout() {
                           className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] GHS {
                             errors.firstName ? 'border-red-500' : 'border-slate-200'
                           }`}
-                          placeholder="John"
+                          placeholder="Kwame"
                         />
                         {errors.firstName && (
                           <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
@@ -222,7 +222,7 @@ export default function Checkout() {
                           className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] GHS {
                             errors.lastName ? 'border-red-500' : 'border-slate-200'
                           }`}
-                          placeholder="Doe"
+                          placeholder="Mensah"
                         />
                         {errors.lastName && (
                           <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
