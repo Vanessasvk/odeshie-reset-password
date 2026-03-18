@@ -293,7 +293,7 @@ export default function Products() {
                       <button
                         key={cat}
                         onClick={() => setSelectedCategory(cat)}
-                        className={`block w-full text-left px-3 py-2 rounded-lg font-['Public_Sans'] transition-colors ${
+                        className={`block w-full text-left px-3 py-2 rounded-lg font-['Public_Sans'] transition-colors GHS {
                           selectedCategory === cat
                             ? 'bg-[#743b1e] text-white'
                             : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
@@ -315,7 +315,7 @@ export default function Products() {
                       <button
                         key={idx}
                         onClick={() => setSelectedPriceRange(idx)}
-                        className={`block w-full text-left px-3 py-2 rounded-lg font-['Public_Sans'] transition-colors ${
+                        className={`block w-full text-left px-3 py-2 rounded-lg font-['Public_Sans'] transition-colors GHS {
                           selectedPriceRange === idx
                             ? 'bg-[#743b1e] text-white'
                             : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
@@ -374,7 +374,7 @@ export default function Products() {
                       <div
                         key={product.id}
                         className="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-lg transition-shadow cursor-pointer"
-                        onClick={() => setLocation(`/product/${product.id}`)}
+                        onClick={() => setLocation(`/product/GHS {product.id}`)}
                         role="button"
                         tabIndex={0}
                       >
@@ -407,7 +407,7 @@ export default function Products() {
                               {[...Array(5)].map((_, i) => (
                                 <svg
                                   key={i}
-                                  className={`w-4 h-4 ${
+                                  className={`w-4 h-4 GHS {
                                     i < Math.floor(product.rating)
                                       ? 'text-yellow-400'
                                       : 'text-slate-300'
@@ -426,7 +426,7 @@ export default function Products() {
 
                           {/* Price */}
                           <div className="text-2xl font-black font-['Public_Sans'] text-[#743b1e] mb-4">
-                            ${product.price}
+                            GHS {product.price}
                           </div>
 
                           {/* Add to Cart Button */}

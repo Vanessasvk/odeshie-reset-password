@@ -8,7 +8,7 @@ export default function Orders() {
       id: '#ORD-001',
       date: 'March 10, 2026',
       items: 'Kente Cloth Luxury Scarf',
-      total: '$450.00',
+      total: 'GHS 450.00',
       status: 'Delivered',
       statusColor: 'bg-green-100 text-green-800',
     },
@@ -16,7 +16,7 @@ export default function Orders() {
       id: '#ORD-002',
       date: 'March 5, 2026',
       items: 'Adire Indigo Wrap (x2)',
-      total: '$760.00',
+      total: 'GHS 760.00',
       status: 'In Transit',
       statusColor: 'bg-blue-100 text-blue-800',
     },
@@ -24,7 +24,7 @@ export default function Orders() {
       id: '#ORD-003',
       date: 'February 28, 2026',
       items: 'Kente Cloth Luxury Scarf, Adire Indigo Wrap',
-      total: '$830.00',
+      total: 'GHS 830.00',
       status: 'Processing',
       statusColor: 'bg-yellow-100 text-yellow-800',
     },
@@ -76,7 +76,7 @@ export default function Orders() {
                     <td className="px-6 py-4 font-['Public_Sans'] text-slate-600">{order.items}</td>
                     <td className="px-6 py-4 font-['Public_Sans'] text-slate-900 font-semibold">{order.total}</td>
                     <td className="px-6 py-4">
-                      <span className={`px-3 py-1 rounded-full text-sm font-semibold font-['Public_Sans'] ${order.statusColor}`}>
+                      <span className={`px-3 py-1 rounded-full text-sm font-semibold font-['Public_Sans'] GHS {order.statusColor}`}>
                         {order.status}
                       </span>
                     </td>

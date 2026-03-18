@@ -209,11 +209,11 @@ export default function ProductDetail() {
                   <button
                     key={idx}
                     onClick={() => setSelectedImage(idx)}
-                    className={`w-20 h-20 rounded-lg overflow-hidden border-2 transition-colors ${
+                    className={`w-20 h-20 rounded-lg overflow-hidden border-2 transition-colors GHS {
                       selectedImage === idx ? 'border-[#743b1e]' : 'border-slate-200'
                     }`}
                   >
-                    <img src={img} alt={`View ${idx + 1}`} className="w-full h-full object-cover" />
+                    <img src={img} alt={`View GHS {idx + 1}`} className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>
@@ -235,7 +235,7 @@ export default function ProductDetail() {
                     {[...Array(5)].map((_, i) => (
                       <svg
                         key={i}
-                        className={`w-5 h-5 ${
+                        className={`w-5 h-5 GHS {
                           i < Math.floor(product.rating) ? 'text-yellow-400' : 'text-slate-300'
                         }`}
                         fill="currentColor"
@@ -252,7 +252,7 @@ export default function ProductDetail() {
 
                 {/* Price */}
                 <div className="text-5xl font-black font-['Public_Sans'] text-[#743b1e] mb-8">
-                  ${product.price}
+                  GHS {product.price}
                 </div>
 
                 {/* Description */}
@@ -336,7 +336,7 @@ export default function ProductDetail() {
                         {[...Array(5)].map((_, i) => (
                           <svg
                             key={i}
-                            className={`w-4 h-4 ${
+                            className={`w-4 h-4 GHS {
                               i < review.rating ? 'text-yellow-400' : 'text-slate-300'
                             }`}
                             fill="currentColor"
@@ -370,7 +370,7 @@ export default function ProductDetail() {
               {relatedProducts.map((prod) => (
                 <div
                   key={prod.id}
-                  onClick={() => setLocation(`/product/${prod.id}`)}
+                  onClick={() => setLocation(`/product/GHS {prod.id}`)}
                   className="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-lg transition-shadow cursor-pointer"
                 >
                   <div className="h-48 bg-slate-200 overflow-hidden">
@@ -385,7 +385,7 @@ export default function ProductDetail() {
                         {[...Array(5)].map((_, i) => (
                           <svg
                             key={i}
-                            className={`w-3 h-3 ${
+                            className={`w-3 h-3 GHS {
                               i < Math.floor(prod.rating) ? 'text-yellow-400' : 'text-slate-300'
                             }`}
                             fill="currentColor"
@@ -398,7 +398,7 @@ export default function ProductDetail() {
                       <span className="text-xs text-slate-500 font-['Public_Sans']">{prod.rating}</span>
                     </div>
                     <div className="text-xl font-black font-['Public_Sans'] text-[#743b1e]">
-                      ${prod.price}
+                      GHS {prod.price}
                     </div>
                   </div>
                 </div>

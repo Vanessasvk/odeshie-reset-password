@@ -121,25 +121,25 @@ export default function ResetPassword() {
                     <div data-layer="Container" data-node-id="66-1651" className="Container inline-flex flex-col justify-start items-start">
                       <img data-layer="Icon" data-node-id="66-1652" className="Icon w-[15px] h-[15px]" src={hasMinLength ? "/66-1652.svg" : "/66-1656.svg"} alt="Minimum 8 characters" />
                     </div>
-                    <div data-layer="Text" data-node-id="66-1653" className={`Text justify-center text-sm font-normal font-['Public_Sans'] ${hasMinLength ? 'text-slate-600' : 'text-slate-400'}`}>Minimum 8 characters long</div>
+                    <div data-layer="Text" data-node-id="66-1653" className={`Text justify-center text-sm font-normal font-['Public_Sans'] GHS {hasMinLength ? 'text-slate-600' : 'text-slate-400'}`}>Minimum 8 characters long</div>
                   </div>
                   <div data-layer="Item" data-node-id="66-1654" className="Item self-stretch inline-flex justify-start items-center gap-2">
                     <div data-layer="Container" data-node-id="66-1655" className="Container inline-flex flex-col justify-start items-start">
                       <img data-layer="Icon" data-node-id="66-1656" className="Icon w-[15px] h-[15px]" src={hasUppercase ? "/66-1652.svg" : "/66-1656.svg"} alt="Uppercase letter" />
                     </div>
-                    <div data-layer="Text" data-node-id="66-1657" className={`Text justify-center text-sm font-normal font-['Public_Sans'] ${hasUppercase ? 'text-slate-600' : 'text-slate-400'}`}>At least one uppercase letter<br/>(A-Z)</div>
+                    <div data-layer="Text" data-node-id="66-1657" className={`Text justify-center text-sm font-normal font-['Public_Sans'] GHS {hasUppercase ? 'text-slate-600' : 'text-slate-400'}`}>At least one uppercase letter<br/>(A-Z)</div>
                   </div>
                   <div data-layer="Item" data-node-id="66-1658" className="Item self-stretch inline-flex justify-start items-center gap-2">
                     <div data-layer="Container" data-node-id="66-1659" className="Container inline-flex flex-col justify-start items-start">
                       <img data-layer="Icon" data-node-id="66-1660" className="Icon w-[15px] h-[15px]" src={hasNumberOrSpecial ? "/66-1652.svg" : "/66-1656.svg"} alt="Number or special character" />
                     </div>
-                    <div data-layer="Text" data-node-id="66-1661" className={`Text justify-center text-sm font-normal font-['Public_Sans'] ${hasNumberOrSpecial ? 'text-slate-600' : 'text-slate-400'}`}>At least one number or<br/>special character</div>
+                    <div data-layer="Text" data-node-id="66-1661" className={`Text justify-center text-sm font-normal font-['Public_Sans'] GHS {hasNumberOrSpecial ? 'text-slate-600' : 'text-slate-400'}`}>At least one number or<br/>special character</div>
                   </div>
                   <div data-layer="Item" data-node-id="66-1662" className="Item self-stretch inline-flex justify-start items-center gap-2">
                     <div data-layer="Container" data-node-id="66-1663" className="Container inline-flex flex-col justify-start items-start">
                       <img data-layer="Icon" data-node-id="66-1664" className="Icon w-[15px] h-[15px]" src={passwordsMatch && password ? "/66-1652.svg" : "/66-1656.svg"} alt="Passwords match" />
                     </div>
-                    <div data-layer="Text" data-node-id="66-1665" className={`Text justify-center text-sm font-normal font-['Public_Sans'] ${passwordsMatch && password ? 'text-slate-600' : 'text-slate-400'}`}>Passwords must match</div>
+                    <div data-layer="Text" data-node-id="66-1665" className={`Text justify-center text-sm font-normal font-['Public_Sans'] GHS {passwordsMatch && password ? 'text-slate-600' : 'text-slate-400'}`}>Passwords must match</div>
                   </div>
                 </div>
               </div>

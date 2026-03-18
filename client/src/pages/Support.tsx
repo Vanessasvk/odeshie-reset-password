@@ -158,7 +158,7 @@ export default function Support() {
             <div className="bg-white rounded-xl p-6 border border-slate-200 text-center">
               <div className="text-2xl mb-2">📞</div>
               <h3 className="font-bold font-['Public_Sans'] text-slate-900 mb-2">Phone</h3>
-              <p className="font-['Public_Sans'] text-slate-600">+1 (555) 123-4567</p>
+              <p className="font-['Public_Sans'] text-slate-600">+233 24 123 4567</p>
             </div>
 
             <div className="bg-white rounded-xl p-6 border border-slate-200 text-center">

@@ -150,7 +150,7 @@ export default function Checkout() {
             {['shipping', 'payment', 'review'].map((s, idx) => (
               <div key={s} className="flex items-center flex-1">
                 <div
-                  className={`w-10 h-10 rounded-full flex items-center justify-center font-bold font-['Public_Sans'] ${
+                  className={`w-10 h-10 rounded-full flex items-center justify-center font-bold font-['Public_Sans'] GHS {
                     step === s
                       ? 'bg-[#743b1e] text-white'
                       : ['shipping', 'payment', 'review'].indexOf(step) > idx
@@ -167,7 +167,7 @@ export default function Checkout() {
                 </div>
                 {idx < 2 && (
                   <div
-                    className={`flex-1 h-1 mx-4 ${
+                    className={`flex-1 h-1 mx-4 GHS {
                       ['shipping', 'payment', 'review'].indexOf(step) > idx
                         ? 'bg-green-500'
                         : 'bg-slate-200'
@@ -199,7 +199,7 @@ export default function Checkout() {
                           name="firstName"
                           value={formData.firstName}
                           onChange={handleInputChange}
-                          className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                          className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] GHS {
                             errors.firstName ? 'border-red-500' : 'border-slate-200'
                           }`}
                           placeholder="John"
@@ -219,7 +219,7 @@ export default function Checkout() {
                           name="lastName"
                           value={formData.lastName}
                           onChange={handleInputChange}
-                          className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                          className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] GHS {
                             errors.lastName ? 'border-red-500' : 'border-slate-200'
                           }`}
                           placeholder="Doe"
@@ -241,7 +241,7 @@ export default function Checkout() {
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                        className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] GHS {
                           errors.email ? 'border-red-500' : 'border-slate-200'
                         }`}
                         placeholder="john@example.com"
@@ -262,10 +262,10 @@ export default function Checkout() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                        className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] GHS {
                           errors.phone ? 'border-red-500' : 'border-slate-200'
                         }`}
-                        placeholder="+1 (555) 123-4567"
+                        placeholder="+233 24 123 4567"
                       />
                       {errors.phone && (
                         <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
@@ -283,7 +283,7 @@ export default function Checkout() {
                         name="address"
                         value={formData.address}
                         onChange={handleInputChange}
-                        className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                        className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] GHS {
                           errors.address ? 'border-red-500' : 'border-slate-200'
                         }`}
                         placeholder="123 Main Street"
@@ -305,7 +305,7 @@ export default function Checkout() {
                           name="city"
                           value={formData.city}
                           onChange={handleInputChange}
-                          className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                          className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] GHS {
                             errors.city ? 'border-red-500' : 'border-slate-200'
                           }`}
                           placeholder="New York"
@@ -325,7 +325,7 @@ export default function Checkout() {
                           name="state"
                           value={formData.state}
                           onChange={handleInputChange}
-                          className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                          className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] GHS {
                             errors.state ? 'border-red-500' : 'border-slate-200'
                           }`}
                           placeholder="NY"
@@ -348,7 +348,7 @@ export default function Checkout() {
                           name="zipCode"
                           value={formData.zipCode}
                           onChange={handleInputChange}
-                          className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                          className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] GHS {
                             errors.zipCode ? 'border-red-500' : 'border-slate-200'
                           }`}
                           placeholder="10001"
@@ -674,10 +674,10 @@ export default function Checkout() {
                             name="cardName"
                             value={formData.cardName}
                             onChange={handleInputChange}
-                            className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                            className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] GHS {
                               errors.cardName ? 'border-red-500' : 'border-slate-200'
                             }`}
-                            placeholder="Richlove Aku"
+                            placeholder="Ama Mensah"
                           />
                           {errors.cardName && (
                             <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
@@ -696,7 +696,7 @@ export default function Checkout() {
                             value={formData.cardNumber}
                             onChange={handleInputChange}
                             placeholder="1234 5678 9012 3456"
-                            className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                            className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] GHS {
                               errors.cardNumber ? 'border-red-500' : 'border-slate-200'
                             }`}
                           />
@@ -718,7 +718,7 @@ export default function Checkout() {
                               value={formData.cardExpiry}
                               onChange={handleInputChange}
                               placeholder="MM/YY"
-                              className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                              className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] GHS {
                                 errors.cardExpiry ? 'border-red-500' : 'border-slate-200'
                               }`}
                             />
@@ -738,7 +738,7 @@ export default function Checkout() {
                               value={formData.cardCVC}
                               onChange={handleInputChange}
                               placeholder="123"
-                              className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                              className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] GHS {
                                 errors.cardCVC ? 'border-red-500' : 'border-slate-200'
                               }`}
                             />
@@ -763,7 +763,7 @@ export default function Checkout() {
                             name="bankName"
                             value={formData.bankName}
                             onChange={handleInputChange}
-                            className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                            className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] GHS {
                               errors.bankName ? 'border-red-500' : 'border-slate-200'
                             }`}
                             placeholder="e.g., Ghana Commercial Bank"
@@ -784,7 +784,7 @@ export default function Checkout() {
                             name="accountNumber"
                             value={formData.accountNumber}
                             onChange={handleInputChange}
-                            className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                            className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] GHS {
                               errors.accountNumber ? 'border-red-500' : 'border-slate-200'
                             }`}
                             placeholder="Your account number"
@@ -808,7 +808,7 @@ export default function Checkout() {
                           name="momoNumber"
                           value={formData.momoNumber}
                           onChange={handleInputChange}
-                          className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
+                          className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] GHS {
                             errors.momoNumber ? 'border-red-500' : 'border-slate-200'
                           }`}
                           placeholder="e.g., +233 24 123 4567"
@@ -917,7 +917,7 @@ export default function Checkout() {
                         <p className="font-semibold text-slate-900">{item.name}</p>
                         <p className="text-sm text-slate-500">Qty: {item.quantity}</p>
                       </div>
-                      <p className="font-semibold text-slate-900">${(item.price * item.quantity).toFixed(2)}</p>
+                      <p className="font-semibold text-slate-900">GHS {(item.price * item.quantity).toFixed(2)}</p>
                     </div>
                   ))}
                 </div>
@@ -925,22 +925,22 @@ export default function Checkout() {
                 <div className="space-y-3 mb-6">
                   <div className="flex justify-between text-slate-600 font-['Public_Sans']">
                     <span>Subtotal</span>
-                    <span>${subtotal.toFixed(2)}</span>
+                    <span>GHS {subtotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-slate-600 font-['Public_Sans']">
                     <span>Shipping</span>
-                    <span>${shippingCost.toFixed(2)}</span>
+                    <span>GHS {shippingCost.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-slate-600 font-['Public_Sans']">
                     <span>Tax</span>
-                    <span>${tax.toFixed(2)}</span>
+                    <span>GHS {tax.toFixed(2)}</span>
                   </div>
                 </div>
 
                 <div className="pt-6 border-t border-slate-200">
                   <div className="flex justify-between text-lg font-black font-['Public_Sans'] text-slate-900">
                     <span>Total</span>
-                    <span className="text-[#743b1e]">${total.toFixed(2)}</span>
+                    <span className="text-[#743b1e]">GHS {total.toFixed(2)}</span>
                   </div>
                 </div>
               </div>

@@ -32,7 +32,7 @@ export default function Analytics() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
             <div className="bg-white rounded-xl p-6 border border-slate-200">
               <div className="text-slate-600 text-sm font-['Public_Sans'] font-semibold mb-2">Total Sales</div>
-              <div className="text-3xl font-black font-['Public_Sans'] text-slate-900">$2,040.00</div>
+              <div className="text-3xl font-black font-['Public_Sans'] text-slate-900">GHS 2,040.00</div>
               <div className="text-green-600 text-xs font-['Public_Sans'] mt-2">↑ 12% from last month</div>
             </div>
 
@@ -44,7 +44,7 @@ export default function Analytics() {
 
             <div className="bg-white rounded-xl p-6 border border-slate-200">
               <div className="text-slate-600 text-sm font-['Public_Sans'] font-semibold mb-2">Average Order Value</div>
-              <div className="text-3xl font-black font-['Public_Sans'] text-slate-900">$170</div>
+              <div className="text-3xl font-black font-['Public_Sans'] text-slate-900">GHS 170</div>
               <div className="text-green-600 text-xs font-['Public_Sans'] mt-2">↑ 5% from last month</div>
             </div>
 
@@ -127,7 +127,7 @@ export default function Analytics() {
                   </div>
                   <div className="text-right">
                     <div className="font-['Public_Sans'] font-semibold text-slate-900">{transaction.amount}</div>
-                    <div className={`font-['Public_Sans'] text-xs ${transaction.status === 'Completed' ? 'text-green-600' : 'text-yellow-600'}`}>
+                    <div className={`font-['Public_Sans'] text-xs GHS {transaction.status === 'Completed' ? 'text-green-600' : 'text-yellow-600'}`}>
                       {transaction.status}
                     </div>
                   </div>

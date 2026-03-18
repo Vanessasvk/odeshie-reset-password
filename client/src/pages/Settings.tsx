@@ -38,7 +38,7 @@ export default function Settings() {
                   <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-700 mb-2">Full Name</label>
                   <input
                     type="text"
-                    defaultValue="Richlove Aku"
+                    defaultValue="Ama Mensah"
                     className="w-full px-4 py-2 border border-slate-200 rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e]"
                   />
                 </div>
@@ -54,7 +54,7 @@ export default function Settings() {
                   <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-700 mb-2">Phone Number</label>
                   <input
                     type="tel"
-                    defaultValue="+1 (555) 123-4567"
+                    defaultValue="+233 24 123 4567"
                     className="w-full px-4 py-2 border border-slate-200 rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e]"
                   />
                 </div>
