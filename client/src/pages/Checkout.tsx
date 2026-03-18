@@ -2,34 +2,11 @@
 
 import { useState } from 'react';
 import { useLocation } from 'wouter';
-
-interface CartItem {
-  id: string;
-  name: string;
-  price: number;
-  quantity: number;
-  image: string;
-}
-
-const SAMPLE_CART: CartItem[] = [
-  {
-    id: '1',
-    name: 'Kente Cloth Luxury Scarf',
-    price: 450,
-    quantity: 1,
-    image: '/66-1605.webp',
-  },
-  {
-    id: '2',
-    name: 'Adire Indigo Wrap',
-    price: 380,
-    quantity: 2,
-    image: '/66-1605.webp',
-  },
-];
+import { useCart } from '@/contexts/CartContext';
 
 export default function Checkout() {
   const [, setLocation] = useLocation();
+  const { items: cartItems } = useCart();
   const [step, setStep] = useState<'shipping' | 'payment' | 'review'>('shipping');
 
   // Form states
@@ -56,7 +33,6 @@ export default function Checkout() {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const cartItems = SAMPLE_CART;
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const shippingCost = formData.shippingMethod === 'express' ? 25 : 10;
   const tax = subtotal * 0.08;
