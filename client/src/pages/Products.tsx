@@ -127,7 +127,7 @@ const PRODUCTS: Product[] = [
     inStock: true,
   },
   {
-    id: '10',
+    id: '13',
     name: 'Zulu Beaded Necklace',
     category: 'Jewelry',
     price: 550,
@@ -137,7 +137,7 @@ const PRODUCTS: Product[] = [
     inStock: true,
   },
   {
-    id: '11',
+    id: '14',
     name: 'Kente Ceremonial Cloth',
     category: 'Textiles',
     price: 780,
@@ -160,11 +160,11 @@ const PRODUCTS: Product[] = [
 
 const CATEGORIES = ['All', 'Textiles', 'Jewelry', 'Accessories', 'Fashion', 'Home Decor', 'Beauty'];
 const PRICE_RANGES = [
-  { label: 'All Prices', min: 0, max: Infinity },
-  { label: 'Under $100', min: 0, max: 100 },
-  { label: '$100 - $500', min: 100, max: 500 },
-  { label: '$500 - $1000', min: 500, max: 1000 },
-  { label: 'Over $1000', min: 1000, max: Infinity },
+  { id: 'all', label: 'All Prices', min: 0, max: Infinity },
+  { id: 'under-100', label: 'Under GHS 100', min: 0, max: 100 },
+  { id: '100-500', label: 'GHS 100 - GHS 500', min: 100, max: 500 },
+  { id: '500-1000', label: 'GHS 500 - GHS 1000', min: 500, max: 1000 },
+  { id: 'over-1000', label: 'Over GHS 1000', min: 1000, max: Infinity },
 ];
 
 export default function Products() {
@@ -313,7 +313,7 @@ export default function Products() {
                   <div className="space-y-2">
                     {PRICE_RANGES.map((range, idx) => (
                       <button
-                        key={idx}
+                        key={range.id}
                         onClick={() => setSelectedPriceRange(idx)}
                         className={`block w-full text-left px-3 py-2 rounded-lg font-['Public_Sans'] transition-colors GHS {
                           selectedPriceRange === idx
@@ -406,7 +406,7 @@ export default function Products() {
                             <div className="flex gap-1">
                               {[...Array(5)].map((_, i) => (
                                 <svg
-                                  key={i}
+                                  key={`star-${product.id}-${i}`}
                                   className={`w-4 h-4 GHS {
                                     i < Math.floor(product.rating)
                                       ? 'text-yellow-400'
