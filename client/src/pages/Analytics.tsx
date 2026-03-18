@@ -32,7 +32,7 @@ export default function Analytics() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
             <div className="bg-white rounded-xl p-6 border border-slate-200">
               <div className="text-slate-600 text-sm font-['Public_Sans'] font-semibold mb-2">Total Sales</div>
-              <div className="text-3xl font-black font-['Public_Sans'] text-slate-900">$2,040.00</div>
+              <div className="text-3xl font-black font-['Public_Sans'] text-slate-900">₵2,040.00</div>
               <div className="text-green-600 text-xs font-['Public_Sans'] mt-2">↑ 12% from last month</div>
             </div>
 
@@ -44,7 +44,7 @@ export default function Analytics() {
 
             <div className="bg-white rounded-xl p-6 border border-slate-200">
               <div className="text-slate-600 text-sm font-['Public_Sans'] font-semibold mb-2">Average Order Value</div>
-              <div className="text-3xl font-black font-['Public_Sans'] text-slate-900">$170</div>
+              <div className="text-3xl font-black font-['Public_Sans'] text-slate-900">₵170</div>
               <div className="text-green-600 text-xs font-['Public_Sans'] mt-2">↑ 5% from last month</div>
             </div>
 
@@ -116,9 +116,9 @@ export default function Analytics() {
             <h2 className="text-lg font-bold font-['Public_Sans'] text-slate-900 mb-6">Recent Transactions</h2>
             <div className="space-y-4">
               {[
-                { id: 'txn-001', date: 'March 15, 2026', product: 'Kente Cloth Luxury Scarf', amount: '$450', status: 'Completed' },
-                { id: 'txn-002', date: 'March 14, 2026', product: 'Adire Indigo Wrap', amount: '$380', status: 'Completed' },
-                { id: 'txn-003', date: 'March 13, 2026', product: 'Bogolan Throw', amount: '$320', status: 'Pending' },
+                { id: 'txn-001', date: 'March 15, 2026', product: 'Kente Cloth Luxury Scarf', amount: '₵450', status: 'Completed' },
+                { id: 'txn-002', date: 'March 14, 2026', product: 'Adire Indigo Wrap', amount: '₵380', status: 'Completed' },
+                { id: 'txn-003', date: 'March 13, 2026', product: 'Bogolan Throw', amount: '₵320', status: 'Pending' },
               ].map((transaction) => (
                 <div key={transaction.id} className="flex justify-between items-center py-3 border-b border-slate-200 last:border-b-0">
                   <div>

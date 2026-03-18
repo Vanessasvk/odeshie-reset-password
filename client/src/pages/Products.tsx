@@ -8,10 +8,10 @@ import { PRODUCTS } from '@/lib/productsData';
 const CATEGORIES = ['All', 'Textiles', 'Jewelry', 'Accessories', 'Fashion', 'Home Decor', 'Beauty'];
 const PRICE_RANGES = [
   { label: 'All Prices', min: 0, max: Infinity },
-  { label: 'Under $100', min: 0, max: 100 },
-  { label: '$100 - $500', min: 100, max: 500 },
-  { label: '$500 - $1000', min: 500, max: 1000 },
-  { label: 'Over $1000', min: 1000, max: Infinity },
+  { label: 'Under ₵100', min: 0, max: 100 },
+  { label: '₵100 - ₵500', min: 100, max: 500 },
+  { label: '₵500 - ₵1000', min: 500, max: 1000 },
+  { label: 'Over ₵1000', min: 1000, max: Infinity },
 ];
 
 export default function Products() {
@@ -273,7 +273,7 @@ export default function Products() {
 
                           {/* Price */}
                           <div className="text-2xl font-black font-['Public_Sans'] text-[#743b1e] mb-4">
-                            ${product.price}
+                            ₵{product.price}
                           </div>
 
                           {/* Add to Cart Button */}

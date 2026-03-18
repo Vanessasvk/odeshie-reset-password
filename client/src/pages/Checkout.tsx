@@ -568,7 +568,7 @@ export default function Checkout() {
                             className="w-4 h-4"
                           />
                           <span className="ml-3 font-['Public_Sans']">
-                            Standard Shipping (5-7 business days) - $10
+                            Standard Shipping (5-7 business days) - ₵10
                           </span>
                         </label>
                         <label className="flex items-center p-4 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50">
@@ -581,7 +581,7 @@ export default function Checkout() {
                             className="w-4 h-4"
                           />
                           <span className="ml-3 font-['Public_Sans']">
-                            Express Shipping (2-3 business days) - $25
+                            Express Shipping (2-3 business days) - ₵25
                           </span>
                         </label>
                       </div>
@@ -904,7 +904,7 @@ export default function Checkout() {
                         <p className="font-semibold text-slate-900">{item.name}</p>
                         <p className="text-sm text-slate-500">Qty: {item.quantity}</p>
                       </div>
-                      <p className="font-semibold text-slate-900">${(item.price * item.quantity).toFixed(2)}</p>
+                      <p className="font-semibold text-slate-900">₵{(item.price * item.quantity).toFixed(2)}</p>
                     </div>
                   ))}
                 </div>
@@ -912,22 +912,22 @@ export default function Checkout() {
                 <div className="space-y-3 mb-6">
                   <div className="flex justify-between text-slate-600 font-['Public_Sans']">
                     <span>Subtotal</span>
-                    <span>${subtotal.toFixed(2)}</span>
+                    <span>₵{subtotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-slate-600 font-['Public_Sans']">
                     <span>Shipping</span>
-                    <span>${shippingCost.toFixed(2)}</span>
+                    <span>₵{shippingCost.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-slate-600 font-['Public_Sans']">
                     <span>Tax</span>
-                    <span>${tax.toFixed(2)}</span>
+                    <span>₵{tax.toFixed(2)}</span>
                   </div>
                 </div>
 
                 <div className="pt-6 border-t border-slate-200">
                   <div className="flex justify-between text-lg font-black font-['Public_Sans'] text-slate-900">
                     <span>Total</span>
-                    <span className="text-[#743b1e]">${total.toFixed(2)}</span>
+                    <span className="text-[#743b1e]">₵{total.toFixed(2)}</span>
                   </div>
                 </div>
               </div>

@@ -188,20 +188,20 @@ export default function OrderConfirmation() {
             <div className="space-y-4 mb-6 pb-6 border-b border-slate-200">
               <div className="flex justify-between text-slate-600 font-['Public_Sans']">
                 <span>Subtotal</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>₵{subtotal.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-slate-600 font-['Public_Sans']">
                 <span>Shipping (Standard)</span>
-                <span>${shippingCost.toFixed(2)}</span>
+                <span>₵{shippingCost.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-slate-600 font-['Public_Sans']">
                 <span>Tax</span>
-                <span>${tax.toFixed(2)}</span>
+                <span>₵{tax.toFixed(2)}</span>
               </div>
             </div>
             <div className="flex justify-between text-xl font-black font-['Public_Sans'] text-slate-900">
               <span>Total</span>
-              <span className="text-[#743b1e]">${total.toFixed(2)}</span>
+              <span className="text-[#743b1e]">₵{total.toFixed(2)}</span>
             </div>
           </div>
 

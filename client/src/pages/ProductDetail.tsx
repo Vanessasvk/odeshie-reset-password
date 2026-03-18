@@ -136,7 +136,7 @@ export default function ProductDetail() {
 
                 {/* Price */}
                 <div className="text-5xl font-black font-['Public_Sans'] text-[#743b1e] mb-8">
-                  ${product.price}
+                  ₵{product.price}
                 </div>
 
                 {/* Description */}
@@ -282,7 +282,7 @@ export default function ProductDetail() {
                       <span className="text-xs text-slate-500 font-['Public_Sans']">{prod.rating}</span>
                     </div>
                     <div className="text-xl font-black font-['Public_Sans'] text-[#743b1e]">
-                      ${prod.price}
+                      ₵{prod.price}
                     </div>
                   </div>
                 </div>
