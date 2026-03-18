@@ -1,7 +1,19 @@
+import { useState } from 'react';
 import { useLocation } from 'wouter';
 
 export default function Settings() {
   const [, setLocation] = useLocation();
+  const [profile, setProfile] = useState({
+    name: 'Richlove Aku',
+    email: 'richlove@example.com',
+    phone: '+233 24 123 4567',
+  });
+  const [saved, setSaved] = useState(false);
+
+  const handleSave = () => {
+    setSaved(true);
+    setTimeout(() => setSaved(false), 2500);
+  };
 
   return (
     <div className="min-h-screen bg-[#f8f6f6]">
@@ -38,7 +50,8 @@ export default function Settings() {
                   <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-700 mb-2">Full Name</label>
                   <input
                     type="text"
-                    defaultValue="Richlove Aku"
+                    value={profile.name}
+                    onChange={(e) => setProfile((p) => ({ ...p, name: e.target.value }))}
                     className="w-full px-4 py-2 border border-slate-200 rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e]"
                   />
                 </div>
@@ -46,7 +59,8 @@ export default function Settings() {
                   <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-700 mb-2">Email Address</label>
                   <input
                     type="email"
-                    defaultValue="john@example.com"
+                    value={profile.email}
+                    onChange={(e) => setProfile((p) => ({ ...p, email: e.target.value }))}
                     className="w-full px-4 py-2 border border-slate-200 rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e]"
                   />
                 </div>
@@ -54,12 +68,16 @@ export default function Settings() {
                   <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-700 mb-2">Phone Number</label>
                   <input
                     type="tel"
-                    defaultValue="+1 (555) 123-4567"
+                    value={profile.phone}
+                    onChange={(e) => setProfile((p) => ({ ...p, phone: e.target.value }))}
                     className="w-full px-4 py-2 border border-slate-200 rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e]"
                   />
                 </div>
-                <button className="mt-4 px-6 py-2 bg-[#743b1e] text-white rounded-lg font-['Public_Sans'] font-semibold hover:bg-[#8b4623] transition-colors">
-                  Save Changes
+                <button
+                  onClick={handleSave}
+                  className="mt-4 px-6 py-2 bg-[#743b1e] text-white rounded-lg font-['Public_Sans'] font-semibold hover:bg-[#8b4623] transition-colors"
+                >
+                  {saved ? '✓ Saved!' : 'Save Changes'}
                 </button>
               </div>
             </div>

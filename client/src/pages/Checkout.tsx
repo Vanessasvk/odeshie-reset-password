@@ -19,7 +19,7 @@ export default function Checkout() {
     city: '',
     state: '',
     zipCode: '',
-    country: 'Afghanistan',
+    country: 'Ghana',
     cardName: '',
     cardNumber: '',
     cardExpiry: '',
@@ -178,7 +178,7 @@ export default function Checkout() {
                           className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
                             errors.firstName ? 'border-red-500' : 'border-slate-200'
                           }`}
-                          placeholder="John"
+                          placeholder="Kofi"
                         />
                         {errors.firstName && (
                           <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
@@ -198,7 +198,7 @@ export default function Checkout() {
                           className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
                             errors.lastName ? 'border-red-500' : 'border-slate-200'
                           }`}
-                          placeholder="Doe"
+                          placeholder="Mensah"
                         />
                         {errors.lastName && (
                           <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
@@ -220,7 +220,7 @@ export default function Checkout() {
                         className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
                           errors.email ? 'border-red-500' : 'border-slate-200'
                         }`}
-                        placeholder="john@example.com"
+                        placeholder="kofi.mensah@example.com"
                       />
                       {errors.email && (
                         <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
@@ -241,7 +241,7 @@ export default function Checkout() {
                         className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
                           errors.phone ? 'border-red-500' : 'border-slate-200'
                         }`}
-                        placeholder="+1 (555) 123-4567"
+                        placeholder="+233 24 123 4567"
                       />
                       {errors.phone && (
                         <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
@@ -262,7 +262,7 @@ export default function Checkout() {
                         className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
                           errors.address ? 'border-red-500' : 'border-slate-200'
                         }`}
-                        placeholder="123 Main Street"
+                        placeholder="14 Independence Avenue"
                       />
                       {errors.address && (
                         <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
@@ -284,7 +284,7 @@ export default function Checkout() {
                           className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
                             errors.city ? 'border-red-500' : 'border-slate-200'
                           }`}
-                          placeholder="New York"
+                          placeholder="Accra"
                         />
                         {errors.city && (
                           <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
@@ -294,7 +294,7 @@ export default function Checkout() {
                       </div>
                       <div>
                         <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-900 mb-2">
-                          State
+                          Region
                         </label>
                         <input
                           type="text"
@@ -304,7 +304,7 @@ export default function Checkout() {
                           className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
                             errors.state ? 'border-red-500' : 'border-slate-200'
                           }`}
-                          placeholder="NY"
+                          placeholder="Greater Accra"
                         />
                         {errors.state && (
                           <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
@@ -317,7 +317,7 @@ export default function Checkout() {
                     <div className="grid grid-cols-2 gap-4 mb-6">
                       <div>
                         <label className="block text-sm font-semibold font-['Public_Sans'] text-slate-900 mb-2">
-                          ZIP Code
+                          Digital Address
                         </label>
                         <input
                           type="text"
@@ -327,7 +327,7 @@ export default function Checkout() {
                           className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
                             errors.zipCode ? 'border-red-500' : 'border-slate-200'
                           }`}
-                          placeholder="10001"
+                          placeholder="GA-123-4567"
                         />
                         {errors.zipCode && (
                           <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
@@ -345,6 +345,17 @@ export default function Checkout() {
                           onChange={handleInputChange}
                           className="w-full px-4 py-2 border border-slate-200 rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e]"
                         >
+                          <option>Ghana</option>
+                          <option>Nigeria</option>
+                          <option>South Africa</option>
+                          <option>Kenya</option>
+                          <option>Ivory Coast</option>
+                          <option>Senegal</option>
+                          <option>Ethiopia</option>
+                          <option>Tanzania</option>
+                          <option>Uganda</option>
+                          <option>Rwanda</option>
+                          <option>──────────</option>
                           <option>Afghanistan</option>
                           <option>Albania</option>
                           <option>Algeria</option>
@@ -653,7 +664,7 @@ export default function Checkout() {
                             className={`w-full px-4 py-2 border rounded-lg font-['Public_Sans'] focus:outline-none focus:ring-2 focus:ring-[#743b1e] ${
                               errors.cardName ? 'border-red-500' : 'border-slate-200'
                             }`}
-                            placeholder="Richlove Aku"
+                            placeholder="Kofi Mensah"
                           />
                           {errors.cardName && (
                             <p className="text-red-500 text-sm mt-1 font-['Public_Sans']">
