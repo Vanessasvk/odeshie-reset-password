@@ -172,7 +172,7 @@ export default function OrderConfirmation() {
                       Quantity: {item.quantity}
                     </p>
                     <p className="font-semibold font-['Public_Sans'] text-slate-900">
-                      ${(item.price * item.quantity).toFixed(2)}
+                      ₵{(item.price * item.quantity).toFixed(2)}
                     </p>
                   </div>
                 </div>

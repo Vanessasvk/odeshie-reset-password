@@ -152,7 +152,7 @@ export default function Cart() {
                         Category: {item.category}
                       </p>
                       <p className="font-semibold font-['Public_Sans'] text-slate-900">
-                        ${item.price.toFixed(2)} each
+                        ₵{item.price.toFixed(2)} each
                       </p>
                     </div>
 
@@ -178,7 +178,7 @@ export default function Cart() {
 
                       <div className="text-right">
                         <p className="text-lg font-black font-['Public_Sans'] text-[#743b1e]">
-                          ${(item.price * item.quantity).toFixed(2)}
+                          ₵{(item.price * item.quantity).toFixed(2)}
                         </p>
                         <button
                           onClick={() => removeFromCart(item.id)}
@@ -240,24 +240,24 @@ export default function Cart() {
                 <div className="space-y-3 mb-6 pb-6 border-b border-slate-200">
                   <div className="flex justify-between text-slate-600 font-['Public_Sans']">
                     <span>Subtotal</span>
-                    <span>${subtotal.toFixed(2)}</span>
+                    <span>₵{subtotal.toFixed(2)}</span>
                   </div>
                   {discount > 0 && (
                     <div className="flex justify-between text-green-600 font-['Public_Sans'] font-semibold">
                       <span>Discount ({(PROMO_CODES[appliedCode!] * 100).toFixed(0)}%)</span>
-                      <span>-${discount.toFixed(2)}</span>
+                      <span>-₵{discount.toFixed(2)}</span>
                     </div>
                   )}
                   <div className="flex justify-between text-slate-600 font-['Public_Sans']">
                     <span>Tax (8%)</span>
-                    <span>${tax.toFixed(2)}</span>
+                    <span>₵{tax.toFixed(2)}</span>
                   </div>
                 </div>
 
                 <div className="mb-6">
                   <div className="flex justify-between text-lg font-black font-['Public_Sans'] text-slate-900">
                     <span>Total</span>
-                    <span className="text-[#743b1e]">${total.toFixed(2)}</span>
+                    <span className="text-[#743b1e]">₵{total.toFixed(2)}</span>
                   </div>
                 </div>
 
