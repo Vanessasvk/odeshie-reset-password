@@ -37,7 +37,7 @@ export const PRODUCTS: Product[] = [
     details: ['Handwoven authentic Kente cloth', 'Dimensions: 72" x 24"', 'Material: 100% premium cotton', 'Traditional Ghanaian craftsmanship', 'Perfect for formal and casual wear', 'Dry clean recommended', 'Includes gift packaging'],
     images: ['https://d2xsxph8kpxj0f.cloudfront.net/310519663435494681/CNWWV9cGWyp7fDCwSJyRZh/kente-cloth-scarf-fKZaTeT37LPj52i3xoXpVX.webp'],
     reviews_data: [
-      { id: '1', author: 'Sarah M.', rating: 5, title: 'Absolutely stunning!', text: 'The quality is exceptional. The colors are vibrant and the craftsmanship is evident in every thread. Worth every penny!', date: '2 weeks ago', helpful: 24 },
+      { id: '1', author: 'Akua M.', rating: 5, title: 'Absolutely stunning!', text: 'The quality is exceptional. The colors are vibrant and the craftsmanship is evident in every thread. Worth every penny!', date: '2 weeks ago', helpful: 24 },
       { id: '2', author: 'James K.', rating: 5, title: 'Perfect gift', text: 'Purchased this for my wife and she loves it. The authenticity and quality make it a true luxury piece.', date: '1 month ago', helpful: 18 },
       { id: '3', author: 'Amara N.', rating: 4, title: 'Beautiful with minor issues', text: 'Love the scarf but it arrived with a small loose thread. Customer service was helpful in resolving it.', date: '1 month ago', helpful: 12 },
     ],
@@ -56,7 +56,7 @@ export const PRODUCTS: Product[] = [
     images: ['https://d2xsxph8kpxj0f.cloudfront.net/310519663435494681/CNWWV9cGWyp7fDCwSJyRZh/adire-indigo-wrap-2g6vMkv6NzQc95zaYVAQZJ.webp'],
     reviews_data: [
       { id: '1', author: 'Zainab A.', rating: 5, title: 'Authentic and beautiful', text: 'This is exactly what I was looking for. The indigo color is rich and the pattern is intricate.', date: '3 weeks ago', helpful: 15 },
-      { id: '2', author: 'David L.', rating: 5, title: 'Great quality', text: 'Exceeded my expectations. The craftsmanship is outstanding.', date: '1 month ago', helpful: 10 },
+      { id: '2', author: 'Asamoah L.', rating: 5, title: 'Great quality', text: 'Exceeded my expectations. The craftsmanship is outstanding.', date: '1 month ago', helpful: 10 },
     ],
   },
   {
@@ -72,7 +72,7 @@ export const PRODUCTS: Product[] = [
     details: ['Authentic Malian Bogolan mud cloth', 'Dimensions: 50" x 60"', 'Hand-painted with natural mud dyes', 'One-of-a-kind pattern', 'Suitable as wall hanging or throw', 'Spot clean only'],
     images: ['https://d2xsxph8kpxj0f.cloudfront.net/310519663435494681/CNWWV9cGWyp7fDCwSJyRZh/bogolan-throw-EjRjKZPGg3kZ725piexwWw.webp'],
     reviews_data: [
-      { id: '1', author: 'Marie T.', rating: 5, title: 'Stunning centerpiece', text: 'Hung this in my living room and it transformed the space. The patterns are mesmerizing.', date: '1 month ago', helpful: 20 },
+      { id: '1', author: 'Chisom T.', rating: 5, title: 'Stunning centerpiece', text: 'Hung this in my living room and it transformed the space. The patterns are mesmerizing.', date: '1 month ago', helpful: 20 },
     ],
   },
   {
